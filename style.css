@@ -75,6 +75,9 @@ body {
   transform: translateX(-50%);
   display: inline-block;
   width: 80px;
+  box-shadow: 5px 5px 8px rgba(201, 91, 91, 0.9);
+  border-radius: 10px;
+
 }
 .btn-roll-dice {
   bottom: 28%;

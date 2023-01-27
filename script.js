@@ -35,6 +35,7 @@ const init = function () {
   player1.classList.add("player-active");
   player2.classList.remove("player-active");
 };
+
 init();
 
 //Switch player function
@@ -69,6 +70,8 @@ btnRoll.addEventListener("click", function () {
     }
   }
 });
+
+
 btnHold.addEventListener("click", function () {
   if (playing) {
     //1.total score=total score+scurrent score
@@ -93,4 +96,6 @@ btnHold.addEventListener("click", function () {
     }
   }
 });
+
+
 btnNew.addEventListener("click", init);
