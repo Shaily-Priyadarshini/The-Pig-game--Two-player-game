@@ -106,7 +106,7 @@ body {
   color: white;
   font-weight: 500;
 }
-.total-score {
+.total-score{
   font-size: 6rem;
   color: #ea8d54;
 }
@@ -122,4 +122,8 @@ body {
 }
 .hidden {
   display: none;
+}
+.win{
+  font-size: 1.5rem;
+  color: #ea8d54;;
 }

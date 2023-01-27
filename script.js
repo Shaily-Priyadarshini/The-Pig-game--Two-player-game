@@ -11,6 +11,8 @@ const img_dice = document.getElementsByClassName("dice")[0];
 const btnNew = document.querySelector(".btn-new-game");
 const btnRoll = document.querySelector(".btn-roll-dice");
 const btnHold = document.querySelector(".btn-hold");
+const winMsg1 = document.querySelector(".win1");
+const winMsg2 = document.querySelector(".win2");
 
 let scores, currentScore, activePlayer, playing;
 
@@ -26,9 +28,19 @@ const init = function () {
   score2.textContent = 0;
   cScore1.textContent = 0;
   cScore2.textContent = 0;
+  const name01 = prompt("Enter the name of player1");
+  if (name01) {
+    document.getElementById("name1").textContent = name01;
+  }
+  const name02 = prompt("Enter the name of player2");
+  if (name01) {
+    document.getElementById("name2").textContent = name02;
+  }
 
   //in beginning dice will be hidden
   img_dice.classList.add("hidden");
+  winMsg1.classList.add("hidden");
+  winMsg2.classList.add("hidden");
 
   player1.classList.remove("player--winner");
   player2.classList.remove("player--winner");
@@ -71,7 +83,6 @@ btnRoll.addEventListener("click", function () {
   }
 });
 
-
 btnHold.addEventListener("click", function () {
   if (playing) {
     //1.total score=total score+scurrent score
@@ -89,6 +100,8 @@ btnHold.addEventListener("click", function () {
       document
         .querySelector(`.player-${activePlayer}`)
         .classList.remove("player-active");
+      // winMsg[activePlayer-1].classList.remove("hidden");
+      document.querySelector(`.win${activePlayer}`).classList.remove("hidden");
     }
     //3. Switch the player
     else {
@@ -96,6 +109,5 @@ btnHold.addEventListener("click", function () {
     }
   }
 });
-
 
 btnNew.addEventListener("click", init);
